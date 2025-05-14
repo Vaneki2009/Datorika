@@ -1,0 +1,2 @@
+# Datorika
+Tīmekļa vietnes izstrāde

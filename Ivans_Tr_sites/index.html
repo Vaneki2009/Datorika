@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="lv">
+<head>
+  <meta charset="UTF-8">
+  <title>Rīgas 88. vidusskola</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans&family=Poppins:wght@600&display=swap" rel="stylesheet">
+</head>
+<body>
+  <button class="theme-toggle" onclick="toggleTheme()">🌓</button>
+  <header class="header"><div class="logo">Rīgas 88. vidusskola</div></header>
+  <nav class="nav">
+    <a href="index.html" class="active">Sākums</a>
+    <a href="par.html">Par skolu</a>
+    <a href="programmas.html">Programmas</a>
+    <a href="intereses.html">Intereses</a>
+    <a href="muzejs.html">Muzejs</a>
+    <a href="kontakti.html">Kontakti</a>
+  </nav>
+  <section class="hero fade-in">
+    <h1>Laipni lūdzam Rīgas 88. vidusskolā</h1>
+    <p>Skola, kur satiekas zināšanas un nākotne.</p>
+  </section>
+  <footer class="footer"><p>&copy; 2025 Rīgas 88. vidusskola</p></footer>
+  <script>
+    if (localStorage.getItem("theme") === "dark") document.body.classList.add("dark");
+    function toggleTheme() {
+      document.body.classList.toggle("dark");
+      localStorage.setItem("theme", document.body.classList.contains("dark") ? "dark" : "light");
+    }
+  </script>
+</body>
+</html>

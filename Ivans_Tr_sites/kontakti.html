@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="lv">
+<head>
+  <meta charset="UTF-8" />
+  <title>Kontakti</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <button class="theme-toggle" onclick="toggleTheme()">🌓</button>
+  <header class="header"><div class="logo">Rīgas 88. vidusskola</div></header>
+  <nav class="nav">
+    <a href="index.html">Sākums</a>
+    <a href="par.html">Par skolu</a>
+    <a href="programmas.html">Programmas</a>
+    <a href="intereses.html">Intereses</a>
+    <a href="muzejs.html">Muzejs</a>
+    <a href="kontakti.html" class="active">Kontakti</a>
+  </nav>
+  <main class="fade-in">
+    <h2>Kontakti</h2>
+    <p>📍 Ilūkstes iela 30, Rīga, LV-1082</p>
+    <p>📞 <a href="tel:+37167810722">+371 6781 0722</a></p>
+    <p>📧 <a href="mailto:r88vs@riga.lv">r88vs@riga.lv</a></p>
+    <img src="Skola_uz_kartes.png" alt="Skola uz kartes" class="image-block">
+
+    <div class="map-frame">
+      <iframe src="https://maps.google.com/maps?q=Ilūkstes%20iela%2030,%20Rīga&t=&z=15&ie=UTF8&iwloc=&output=embed"
+              width="100%" height="300" style="border:0;" allowfullscreen loading="lazy"></iframe>
+    </div>
+  </main>
+  <footer class="footer"><p>&copy; 2025 Rīgas 88. vidusskola</p></footer>
+  <script>
+  if (localStorage.getItem("theme") === "dark") document.body.classList.add("dark");
+  function toggleTheme() {
+    document.body.classList.toggle("dark");
+    localStorage.setItem("theme", document.body.classList.contains("dark") ? "dark" : "light");
+  }
+</script>
+
+</body>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="lv">
+<head>
+  <meta charset="UTF-8">
+  <title>Interešu izglītība</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <button class="theme-toggle" onclick="toggleTheme()">🌓</button>
+  <header class="header"><div class="logo">Rīgas 88. vidusskola</div></header>
+  <nav class="nav">
+    <a href="index.html">Sākums</a>
+    <a href="par.html">Par skolu</a>
+    <a href="programmas.html">Programmas</a>
+    <a href="intereses.html" class="active">Intereses</a>
+    <a href="muzejs.html">Muzejs</a>
+    <a href="kontakti.html">Kontakti</a>
+  </nav>
+  <main class="fade-in">
+    <h2>Interešu izglītība</h2>
+    <p>Skolā aktīvi darbojas dažādi interešu pulciņi, kas palīdz skolēniem atklāt savus talantus un attīstīt prasmes:</p>
+    <ul>
+      <li><strong>Horeogrāfija</strong> — klasiskās un mūsdienu dejas pamati ar uzstāšanās iespējām.</li>
+      <li><strong>Vizuālā māksla</strong> — zīmēšana, gleznošana, dizains un radošie projekti.</li>
+      <li><strong>Mūzika</strong> — vokālie ansambļi, klavieres, ģitāra.</li>
+      <li><strong>Teātris</strong> — aktiermeistarība, skatuves runa, uzvedumi.</li>
+      <li><strong>Sports</strong> — basketbols, vieglatlētika, vingrošana un sacensības.</li>
+    </ul>
+
+    <!-- <div class="gallery">
+  <img src="img/intereses/deja.jpg" alt="Deju pulciņš">
+  <img src="img/intereses/makslas.jpg" alt="Mākslas pulciņš">
+  <img src="img/intereses/muzika.jpg" alt="Mūzikas pulciņš">
+    </div> -->
+
+    <p>Mēs veicinām radošumu un sadarbību ārpus mācību stundu laika.</p>
+  </main>
+  <footer class="footer"><p>&copy; 2025 Rīgas 88. vidusskola</p></footer>
+  <script>
+    if (localStorage.getItem("theme") === "dark") document.body.classList.add("dark");
+    function toggleTheme() {
+      document.body.classList.toggle("dark");
+      localStorage.setItem("theme", document.body.classList.contains("dark") ? "dark" : "light");
+    }
+  </script>
+</body>
+</html>

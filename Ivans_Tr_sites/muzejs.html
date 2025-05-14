@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="lv">
+<head>
+  <meta charset="UTF-8" />
+  <title>Skolas muzejs</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <button class="theme-toggle" onclick="toggleTheme()">🌓</button>
+  <header class="header"><div class="logo">Rīgas 88. vidusskola</div></header>
+  <nav class="nav">
+    <a href="index.html">Sākums</a>
+    <a href="par.html">Par skolu</a>
+    <a href="programmas.html">Programmas</a>
+    <a href="intereses.html">Intereses</a>
+    <a href="muzejs.html" class="active">Muzejs</a>
+    <a href="kontakti.html">Kontakti</a>
+  </nav>
+
+  <main class="fade-in">
+    <h2>Skolas muzejs</h2>
+    <p>Dibināts 2009. gadā. Ekspozīcijas:</p>
+    <ul>
+      <li>“Mēs lepojamies”</li>
+      <li>“Skolas dinastijas”</li>
+      <li>“Skola vakar un šodien”</li>
+    </ul>
+
+    <!-- <div class="gallery">
+      <img src="img/muzejs/lepojamies.jpg" alt="Mēs lepojamies">
+      <img src="img/muzejs/dinastijas.jpg" alt="Skolas dinastijas">
+      <img src="img/muzejs/vakar.jpg" alt="Skola vakar un šodien">
+    </div> -->
+
+    <section class="image-switch-block fade-in">
+      <h3>Skolas izmaiņas</h3>
+      <div class="switch-container">
+        <img id="schoolImage" src="Now_88.jpg" alt="Tagad">
+        <div class="label" id="imgLabel">Tagad</div>
+        <button onclick="toggleSchoolImage()" class="switch-toggle">⏪ Pārslēgt</button>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer"><p>&copy; 2025 Rīgas 88. vidusskola</p></footer>
+
+  <script>
+    if (localStorage.getItem("theme") === "dark") {
+      document.body.classList.add("dark");
+    }
+
+    function toggleTheme() {
+      document.body.classList.toggle("dark");
+      localStorage.setItem("theme", document.body.classList.contains("dark") ? "dark" : "light");
+    }
+
+    let isNew = true;
+    function toggleSchoolImage() {
+      const img = document.getElementById("schoolImage");
+      const label = document.getElementById("imgLabel");
+
+      img.style.opacity = 0;
+      setTimeout(() => {
+        if (isNew) {
+          img.src = "Old_88.jpg";
+          label.textContent = "Agrāk";
+        } else {
+          img.src = "Now_88.jpg";
+          label.textContent = "Tagad";
+        }
+        isNew = !isNew;
+        img.style.opacity = 1;
+      }, 300);
+    }
+  </script>
+</body>
+</html>
